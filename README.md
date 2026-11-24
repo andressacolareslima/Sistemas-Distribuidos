@@ -15,6 +15,8 @@ Execute os comandos de cada seção a partir da raiz do repositório, em termina
 
 Implementação em Java com serialização de livros para streams, arquivos e conexões TCP. Um protocolo de requisição e resposta permite cadastrar e buscar livros. Os clientes autenticados podem receber avisos por multicast.
 
+[Vídeo de demonstração](trabalho-1/demonstracao.mp4) · [Relatório técnico (PDF)](trabalho-1/relatorio-tecnico.pdf)
+
 Compile e execute o teste integrado com um JDK:
 
 ```sh
@@ -30,6 +32,8 @@ Para experimentar o RPC, execute `java -cp target/classes biblioteca.Main rpc-se
 
 O servidor autentica alunos e funcionários, mantém o histórico de notificações e distribui avisos por callbacks remotos. Funcionários podem publicar notificações, alertas e atualizações. As operações usam mensagens JSON de requisição e resposta sobre RMI.
 
+[Vídeo de demonstração](trabalho-2/demonstracao.mp4) · [Relatório técnico (PDF)](trabalho-2/relatorio-tecnico.pdf)
+
 Compile e rode o teste entre processos com um JDK e Python 3:
 
 ```sh
@@ -44,6 +48,8 @@ Para uso manual, inicie `java -cp target/classes biblioteca.Servidor` e rode `ja
 ## [Trabalho 3 — Sistema de Gestão de Farmácia com HTTP/JSON](trabalho-3/)
 
 Uma API HTTP/JSON em Java atende clientes independentes em Python e JavaScript. Clientes autenticados consultam estoque e recebem avisos por consultas periódicas. Funcionários também registram vendas, consultam atendimentos e publicam avisos. Vendas de medicamentos controlados exigem uma receita de demonstração de uso único. Estoque, receitas utilizadas, atendimentos e avisos ficam em memória durante a execução do servidor.
+
+O vídeo e o relatório do Trabalho 3 documentam a versão original da API de notificações da biblioteca, anterior à reimplementação em farmácia. [Vídeo da versão original](trabalho-3/demonstracao-versao-original.mp4) · [Relatório da versão original (PDF)](trabalho-3/relatorio-versao-original.pdf)
 
 Com JDK 17+, Python 3.10+ e Node.js 18+, inicie o servidor:
 
