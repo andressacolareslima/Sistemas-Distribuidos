@@ -2,7 +2,7 @@
 // Cliente HTTP independente; Node.js 18+ (fetch nativo), sem npm install.
 import readline from 'node:readline';
 
-const [url = 'http://127.0.0.1:8080', login = 'aluno', senha = '1234'] = process.argv.slice(2);
+const [url = 'http://127.0.0.1:8080', login = 'cliente', senha = '1234'] = process.argv.slice(2);
 let token;
 let cursor = 0;
 let parar = false;
@@ -41,12 +41,19 @@ async function comando(linha) {
   if (texto === 'sair') { parar = true; entrada.close(); return; }
   try {
     let resultado;
+    const [acao, codigo, quantidade, receita, ...extras] = texto.split(/\s+/);
     if (texto === 'perfil') resultado = await requisitar('GET', '/api/perfil');
+    else if (acao === 'estoque' && !quantidade) {
+      const caminho = codigo ? '/api/estoque?' + new URLSearchParams({ codigo }) : '/api/estoque';
+      resultado = await requisitar('GET', caminho);
+    } else if (acao === 'venda' && quantidade && !extras.length) {
+      resultado = await requisitar('POST', '/api/vendas', { codigo, quantidade, receita });
+    } else if (texto === 'atendimentos') resultado = await requisitar('GET', '/api/vendas');
     else if (texto === 'historico') resultado = await requisitar('GET', '/api/notificacoes');
     else {
       const partes = /^publicar\s+(\S+)\s+(.+)$/.exec(texto);
       if (!partes) {
-        console.log('Comando inválido. Uso: perfil | historico | publicar TIPO mensagem | sair');
+        console.log('Comando inválido. Uso: perfil | estoque [CODIGO] | venda CODIGO QTD [RECEITA] | atendimentos | historico | publicar TIPO mensagem | sair');
         return;
       }
       resultado = await requisitar('POST', '/api/notificacoes', { tipo: partes[1], mensagem: partes[2] });
@@ -58,7 +65,7 @@ async function comando(linha) {
 try {
   ({ token } = await requisitar('POST', '/api/sessoes', { login, senha }));
   const escuta = escutar();
-  console.log('Autenticado. Comandos: perfil, historico, publicar TIPO mensagem, sair');
+  console.log('Autenticado. Comandos: perfil | estoque [CODIGO] | venda CODIGO QTD [RECEITA] | atendimentos | historico | publicar TIPO mensagem | sair');
   entrada = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
   let fila = Promise.resolve();
   process.once('SIGINT', () => entrada.close());

@@ -1,4 +1,4 @@
-package biblioteca;
+package farmacia;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
@@ -14,6 +14,8 @@ public final class Servidor {
     private final AutenticacaoService autenticacao = new AutenticacaoService();
     private final PerfilService perfis = new PerfilService();
     private final NotificacaoService notificacoes = new NotificacaoService();
+
+    private final FarmaciaService farmacia = new FarmaciaService();
 
     private Map<String, String> corpo(HttpExchange exchange) throws IOException {
         String contentType = exchange.getRequestHeaders().getFirst("Content-Type");
@@ -53,6 +55,22 @@ public final class Servidor {
                 case "/api/perfil" -> {
                     if (!method.equals("GET")) metodo(exchange, "GET");
                     resposta = perfis.consultar(autenticacao.exigirUsuario(authorization));
+                }
+                case "/api/estoque" -> {
+                    if (!method.equals("GET")) metodo(exchange, "GET");
+                    autenticacao.exigirUsuario(authorization);
+                    resposta = farmacia.consultar(exchange.getRequestURI().getRawQuery());
+                }
+                case "/api/vendas" -> {
+                    Usuario usuario = autenticacao.exigirUsuario(authorization);
+                    if (!(usuario instanceof Funcionario))
+                        throw new ApiException(403, "Vendas exigem funcionário");
+                    if (method.equals("POST")) {
+                        resposta = farmacia.vender(usuario, corpo(exchange));
+                        status = 201;
+                    } else if (method.equals("GET")) {
+                        resposta = farmacia.atendimentos();
+                    } else { metodo(exchange, "GET, POST"); return; }
                 }
                 case "/api/notificacoes" -> {
                     Usuario usuario = autenticacao.exigirUsuario(authorization);
@@ -97,6 +115,6 @@ public final class Servidor {
         http.createContext("/", app::atender);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> { http.stop(0); pool.shutdownNow(); }));
         http.start();
-        System.out.println("Biblioteca API pronta em http://" + host + ":" + http.getAddress().getPort());
+        System.out.println("Farmácia API pronta em http://" + host + ":" + http.getAddress().getPort());
     }
 }

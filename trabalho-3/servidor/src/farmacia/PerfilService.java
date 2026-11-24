@@ -1,4 +1,4 @@
-package biblioteca;
+package farmacia;
 
 import java.util.Map;
 

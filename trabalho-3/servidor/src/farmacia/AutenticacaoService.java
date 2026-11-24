@@ -1,4 +1,4 @@
-package biblioteca;
+package farmacia;
 
 import java.util.Map;
 import java.util.UUID;
@@ -11,9 +11,9 @@ public final class AutenticacaoService {
     public String autenticar(Map<String, String> dados) {
         String login = Json.required(dados, "login");
         String senha = Json.required(dados, "senha");
-        if (!"1234".equals(senha) || !(login.equals("aluno") || login.equals("admin")))
+        if (!"1234".equals(senha) || !(login.equals("cliente") || login.equals("admin")))
             throw new ApiException(401, "Credenciais inválidas");
-        Usuario usuario = login.equals("admin") ? new Funcionario(login) : new Aluno(login);
+        Usuario usuario = login.equals("admin") ? new Funcionario(login) : new Cliente(login);
         String token = UUID.randomUUID().toString();
         sessoes.put(token, usuario);
         return token;

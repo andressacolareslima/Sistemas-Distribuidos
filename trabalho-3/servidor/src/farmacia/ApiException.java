@@ -1,4 +1,4 @@
-package biblioteca;
+package farmacia;
 
 public final class ApiException extends RuntimeException {
     public final int status;

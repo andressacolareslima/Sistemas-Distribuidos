@@ -1,4 +1,4 @@
-package biblioteca;
+package farmacia;
 import java.util.*;
 /** Codec JSON para objetos cujos campos são strings. Rejeita entrada fora desse formato. */
 public final class Json {
