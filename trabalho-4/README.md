@@ -5,7 +5,7 @@
 
 O balcão envia pedidos de venda a uma fila persistente em SQLite. O consumidor em JavaScript valida a receita de demonstração, atualiza o estoque e registra o atendimento. Os pedidos ficam na fila enquanto o consumidor estiver desligado.
 
-[Relatório técnico (PDF)](relatorio-tecnico.pdf)
+[Vídeo de demonstração](trabalho-4-sistema-de-gestao-de-farmacia.mp4) · [Relatório técnico (PDF)](relatorio-tecnico.pdf)
 
 ## Diagrama de classes
 
