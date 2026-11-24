@@ -1,0 +1,117 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 9 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 3220 >>
+stream
+BT /F2 10 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 788 Tm (UFC · CAMPUS DE QUIXADÁ) Tj ET
+BT /F1 9 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 770 Tm (QXD0043  |  Sistemas Distribuídos  |  2026.2) Tj ET
+0.77 0.82 0.83 RG 57 754 m 538 754 l S
+0.77 0.82 0.83 RG 57 62 m 538 62 l S
+BT /F1 9 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 44 Tm (Relatório técnico  |  Trabalho 4  |  Andressa Colares) Tj ET
+BT /F1 9 Tf 0.15 0.20 0.25 rg 1 0 0 1 520 44 Tm (1/2) Tj ET
+BT /F2 25 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 720 Tm (Sistema de Gestão de Farmácia) Tj ET
+BT /F1 13 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 694 Tm (Trabalho 4 — Comunicação Indireta) Tj ET
+BT /F2 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 662 Tm (Equipe 31  |  Andressa Colares  |  Matrícula 471151) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 644 Tm (Ciência da Computação  |  Professor Rafael Braga) Tj ET
+BT /F2 13 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 607 Tm (1. Justificativa da escolha) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 585 Tm (O sistema adota a Opção C do enunciado, uma fila de mensagens persistente. No) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 569 Tm (atendimento da farmácia, registrar a solicitação e efetivar a venda são etapas) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 553 Tm (distintas. A fila permite que o balcão continue recebendo pedidos quando o serviço) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 537 Tm (de estoque estiver temporariamente desligado. A confirmação da venda ocorre após a) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 521 Tm (verificação da receita e a baixa do estoque.) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 495 Tm (O desacoplamento espacial ocorre porque balcão e consumidor conhecem apenas o) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 479 Tm (endereço do broker. O desacoplamento temporal ocorre porque a mensagem fica) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 463 Tm (registrada enquanto o consumidor está offline. O broker precisa estar disponível) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 447 Tm (para aceitar novos pedidos.) Tj ET
+BT /F2 13 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 413 Tm (2. Integração com o sistema de farmácia) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 391 Tm (O balcão em Python envia o pedido por HTTP ao broker, também em Python. O broker) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 375 Tm (grava a mensagem no SQLite antes de confirmar o recebimento. O consumidor em) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 359 Tm (JavaScript \(Node.js\) lê as mensagens em ordem de chegada \(FIFO\), processa a venda e) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 343 Tm (confirma o resultado no broker. O balcão consulta o resultado pelo ID do pedido.) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 317 Tm (A classe Farmacia agrega o catálogo de Medicamento, com as categorias) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 301 Tm (MedicamentoControlado, MedicamentoComum, Cosmético, Suplemento e) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 285 Tm (EquipamentoHospitalar. O contrato Vendas reúne verificarReceita, atualizarEstoque e) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 269 Tm (registrarAtendimento. A demonstração usa receita fictícia de uso único.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R  >>
+endobj
+7 0 obj
+<< /Type /Annot /Subtype /Link /Rect [57 181 300 196] /Border [0 0 0] /A << /S /URI /URI (https://github.com/andressacolareslima/Sistemas-Distribuidos/tree/main/trabalho-4) >> >>
+endobj
+8 0 obj
+<< /Length 3886 >>
+stream
+BT /F2 10 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 788 Tm (UFC · CAMPUS DE QUIXADÁ) Tj ET
+BT /F1 9 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 770 Tm (QXD0043  |  Sistemas Distribuídos  |  2026.2) Tj ET
+0.77 0.82 0.83 RG 57 754 m 538 754 l S
+0.77 0.82 0.83 RG 57 62 m 538 62 l S
+BT /F1 9 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 44 Tm (Relatório técnico  |  Trabalho 4  |  Andressa Colares) Tj ET
+BT /F1 9 Tf 0.15 0.20 0.25 rg 1 0 0 1 520 44 Tm (2/2) Tj ET
+BT /F2 13 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 718 Tm (3. Robustez e tratamento de falhas) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 696 Tm (O broker confirma os pedidos em uma transação SQLite e mantém o histórico de) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 680 Tm (solicitações e resultados. Se o consumidor cair antes de confirmar o processamento,) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 664 Tm (o pedido permanece pendente. Na retomada, as operações concluídas são reaplicadas) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 648 Tm (ao catálogo inicial para recuperar estoque, receitas usadas e atendimentos. O) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 632 Tm (próximo pedido pendente é processado a partir desse estado.) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 606 Tm (O mesmo ID com os mesmos dados recupera o registro existente. Se os dados mudarem,) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 590 Tm (o broker rejeita o reenvio. A recuperação depende da preservação do banco e de) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 574 Tm (regras determinísticas durante a reexecução do histórico.) Tj ET
+BT /F2 13 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 540 Tm (4. Análise de desempenho e gerenciamento) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 518 Tm (A indireção acrescenta chamadas HTTP, serialização e gravações em disco. O) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 502 Tm (consumidor consulta a fila a cada 300 ms quando ela está vazia, o que gera tráfego) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 486 Tm (ocioso e pode acrescentar espera ao próximo pedido. A ordem FIFO serializa as) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 470 Tm (baixas de estoque, e a reexecução do histórico aumenta o tempo de recuperação) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 454 Tm (conforme o volume cresce.) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 428 Tm (Consultas com espera longa reduziriam o tráfego ocioso. Processar lotes em ordem) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 412 Tm (amortizaria o custo das chamadas, e snapshots do estoque e dos atendimentos) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 396 Tm (reduziriam o tempo de retomada. O broker e seu banco são pontos únicos de falha. A) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 380 Tm (avaliação de desempenho foi qualitativa, sem benchmark.) Tj ET
+BT /F2 13 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 346 Tm (5. Demonstração e resultados) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 324 Tm (Com o consumidor desligado, uma venda de duas unidades de COM-01 ficou pendente e) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 308 Tm (continuou na fila após o reinício do broker. Ao iniciar o consumidor, o estoque) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 292 Tm (passou de 20 para 18. Uma venda controlada sem receita foi rejeitada e uma venda) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 276 Tm (com receita fictícia válida reduziu o estoque de CTL-01 de 8 para 7.) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 250 Tm (O teste também confirmou que repetir o mesmo pedido conserva o estoque e que o) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 234 Tm (consumidor, após reiniciar, recupera o saldo anterior para processar uma nova) Tj ET
+BT /F1 11 Tf 0.15 0.20 0.25 rg 1 0 0 1 57 218 Tm (venda.) Tj ET
+BT /F2 10 Tf 0.13 0.34 0.38 rg 1 0 0 1 57 184 Tm (Código-fonte e roteiro de execução no GitHub) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R /Annots [7 0 R] >>
+endobj
+10 0 obj
+<< /Title (Relatorio Tecnico - Sistema de Gestao de Farmacia) /Author (Andressa Colares) >>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000224 00000 n 
+0000000326 00000 n 
+0000003597 00000 n 
+0000003734 00000 n 
+0000003928 00000 n 
+0000007865 00000 n 
+0000008017 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R /Info 10 0 R >>
+startxref
+8125
+%%EOF
