@@ -7,6 +7,9 @@
 
 Este repositório reúne os códigos dos trabalhos 1, 2 e 3 da disciplina, publicados inicialmente em outro repositório. [Repositório original — QXD0043-Sistemas-Distribuidos](https://github.com/andressacolareslima/QXD0043-Sistemas-Distribuidos)
 
+O Trabalho 4 foi desenvolvido neste repositório.
+
 - [Trabalho 1](trabalho-1/)
 - [Trabalho 2](trabalho-2/)
 - [Trabalho 3](trabalho-3/)
+- [Trabalho 4](trabalho-4/)
